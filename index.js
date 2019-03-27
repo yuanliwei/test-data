@@ -1,5 +1,6 @@
 var pinyin = require("pinyin");
 const fs = require('fs');
+const path = require('path');
 const NameUtil = require('./NameUtil');
 const nameGenerate = new NameUtil()
 
@@ -18,7 +19,7 @@ function pin_yin(words) {
  */
 async function quan_tang_shi() {
     return new Promise(function (resolve, reject) {
-        var filepath = './data/全唐诗.txt'
+        var filepath = path.join(__dirname, '/data/全唐诗.txt')
         var length = 30 * 1024
         var size = fs.statSync(filepath).size - length
         var start = parseInt(size * Math.random())
@@ -57,7 +58,7 @@ async function quan_tang_shi() {
  * 脑筋急转弯
  */
 function nao_jin_ji_zhuan_wan() {
-    var file = './data/脑筋急转弯大全.txt'
+    var file = path.join(__dirname, '/data/脑筋急转弯大全.txt')
     var content = fs.readFileSync(file, 'utf-8')
     var lines = content.split('\n')
     var results = lines.filter((line) => {
@@ -73,7 +74,7 @@ function nao_jin_ji_zhuan_wan() {
  * 增广贤文
  */
 function zeng_guang_xian_wen() {
-    var file = './data/《增广贤文》.txt'
+    var file = path.join(__dirname, '/data/《增广贤文》.txt')
     var content = fs.readFileSync(file, 'utf-8')
     var lines = content.split('\n')
     var results = lines.filter((line) => {
@@ -88,7 +89,7 @@ function zeng_guang_xian_wen() {
  * 网络小说
  */
 function wang_luo_xiao_shuo() {
-    var file = './data/网络小说列表.txt'
+    var file = path.join(__dirname, '/data/网络小说列表.txt')
     var content = fs.readFileSync(file, 'utf-8')
     var lines = content.split('\n')
     var results = lines.filter((line) => {
