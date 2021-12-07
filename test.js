@@ -8,7 +8,13 @@ async function start() {
     console.log(result);
     result = index.zeng_guang_xian_wen()
     console.log(result);
+    result = index.wang_luo_xiao_shuo()
+    console.log(result);
     result = index.xing_ming()
+    console.log(result);
+    result = index.head_image()
+    console.log(result);
+    result = index.image()
     console.log(result);
 }
 start()

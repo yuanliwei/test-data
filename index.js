@@ -99,6 +99,34 @@ function wang_luo_xiao_shuo() {
     })
     return results[parseInt(Math.random() * results.length - 1)]
 }
+/**
+ * 头像
+ */
+function head_image() {
+    var file = path.join(__dirname, '/data/head_image.txt')
+    var content = fs.readFileSync(file, 'utf-8')
+    var lines = content.split('\n')
+    var results = lines.filter((line) => {
+        return line.length > 5
+    }).map((line) => {
+        return line.trim()
+    })
+    return results[parseInt(Math.random() * results.length - 1)]
+}
+/**
+ * 图片
+ */
+function image() {
+    var file = path.join(__dirname, '/data/image.txt')
+    var content = fs.readFileSync(file, 'utf-8')
+    var lines = content.split('\n')
+    var results = lines.filter((line) => {
+        return line.length > 5
+    }).map((line) => {
+        return line.trim()
+    })
+    return results[parseInt(Math.random() * results.length - 1)]
+}
 
 /**
  * 姓名
@@ -114,3 +142,5 @@ exports.nao_jin_ji_zhuan_wan = nao_jin_ji_zhuan_wan
 exports.zeng_guang_xian_wen = zeng_guang_xian_wen
 exports.wang_luo_xiao_shuo = wang_luo_xiao_shuo
 exports.xing_ming = xing_ming
+exports.head_image = head_image
+exports.image = image
