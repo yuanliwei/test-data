@@ -1,7 +1,7 @@
-var pinyin = require("pinyin");
-const fs = require('fs');
-const path = require('path');
-const NameUtil = require('./NameUtil');
+var pinyin = require("pinyin")
+const fs = require('fs')
+const path = require('path')
+const NameUtil = require('./NameUtil')
 const nameGenerate = new NameUtil()
 
 /**
@@ -23,7 +23,7 @@ async function quan_tang_shi() {
         var length = 30 * 1024
         var size = fs.statSync(filepath).size - length
         var start = parseInt(size * Math.random())
-        console.log(start);
+        console.log(start)
         var randomAccessFile = require('random-access-file')
         var file = randomAccessFile(filepath)
         file.read(start, length, function (err, buffer) {
@@ -51,7 +51,7 @@ async function quan_tang_shi() {
                 console.log('file is closed')
             })
         })
-    });
+    })
 }
 
 /**
@@ -129,6 +129,23 @@ function image() {
 }
 
 /**
+ * 获取随机文本行
+ */
+function findRandomTxtLine(name) {
+    let file = path.join(__dirname, '/data/', name)
+    let content = fs.readFileSync(file, 'utf-8')
+    let lines = content.split('\n')
+    let results = lines.map((line) => {
+        return line.trim()
+    }).filter((line) => {
+        return line.length > 1
+    })
+    return results[parseInt(Math.random() * results.length - 1)]
+}
+
+
+
+/**
  * 姓名
  */
 function xing_ming() {
@@ -144,3 +161,8 @@ exports.wang_luo_xiao_shuo = wang_luo_xiao_shuo
 exports.xing_ming = xing_ming
 exports.head_image = head_image
 exports.image = image
+exports.di_ming = () => {
+    let line = findRandomTxtLine('地名.txt')
+    return line.split(/ +/)[1]
+}
+exports.xue_xiao_ming_zi = () => findRandomTxtLine('学校名字.txt')

@@ -16,5 +16,9 @@ async function start() {
     console.log(result);
     result = index.image()
     console.log(result);
+    result = index.di_ming()
+    console.log(result);
+    result = index.xue_xiao_ming_zi()
+    console.log(result);
 }
 start()
