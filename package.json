@@ -2,9 +2,13 @@
   "name": "test-data",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "license": "MIT",
   "dependencies": {
-    "pinyin": "^2.8.3",
-    "random-access-file": "^2.1.0"
+    "pinyin": "^2.11.2",
+    "random-access-file": "^2.2.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.26.0"
   }
 }

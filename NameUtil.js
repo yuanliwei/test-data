@@ -1,5 +1,5 @@
 
-module.exports = class NameUtil {
+export default class NameUtil {
     constructor() {
         this.nameCode = '鑫正涵琛妍芸露楠薇锦彤采初美冬婧桐莲彩洁'
             + '呈菡怡冰雯雪茜优静萱林馨鹤梅娜璐曼彬芳颖韵曦蔚桂月梦琪蕾'
